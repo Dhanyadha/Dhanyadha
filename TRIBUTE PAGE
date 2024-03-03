@@ -1,0 +1,74 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <style>         
+        body {  
+            background-color:pink;  
+            margin: 20%;  
+        }  
+        #title {  
+            text-align: center;  
+            text-shadow: 5px 5px 10px WHITE ;  
+            font-size: 8vh;  
+        }  
+        img {  
+            display: inline-block;  
+            width: 100%;  
+        }     
+        #caption {  
+            font-size: 19px;  
+            font-family:sans-serif;  
+            color: BLUE ;  
+        }  
+        div#tribute-data {  
+            background-color: rgb(46, 139, 87, 0.25);  
+            box-shadow: 20px 20px 20px blue;  
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+            padding: 25px 25px;  
+            margin: 11px;  
+            margin-top: 50px;  
+        }  
+        h1.title-vk {  
+            font-size: 35px;  
+            color: white;  
+            text-align: center;  
+            text-shadow: 5px 6px 10px black;  
+        }     
+    </style>  
+</head>  
+<body>  
+    <main id="main">  
+        <!-- Title of the web page tributing virat kohli -->  
+        <h1 id="title">  
+            VIRAT KOHLI   
+        </h1>  
+        <div id="img">  
+            <!--Image of the Virat kohli-->  
+         <img src="https://drive.google.com/thumbnail?id=1LaQkdj1TyjORQwTDiZ3IWRuoJwxevMv1" alt="Page Image">
+        </div>  
+        <div id="tribute-data">  
+            <h1 class="title-vk">  
+                About King Kohli 
+                
+            </h1>  
+       <p>  
+                ☛ Virat Kohli  born 5 November 1988 is an Indian international cricketer and the former captain of the Indian national cricket team. He is a right-handed batsman and an occasional medium-fast bowler. He currently represents Royal Challengers Bangalore in the IPL and Delhi in domestic cricket.<br><br>  
+                ☛ He holds the record as the highest run-scorer in T20I and IPL, ranks third in ODI, and stands as the fourth-highest in international cricket .<br><br>  
+                ☛ In Malaysia's Under-19 World Cup, Virat led India to win and finished the competition as one of the top three run scorers. His innate leadership abilities attracted the proper kind of attention.<br><br>  
+                ☛ Royal Challengers Bangalore, an IPL team, signs Virat on a youngster contract for just Rs 12.5 lakhs when he is still a minor.  
+                <br><br> ☛ In 2013, Kohli was ranked number one in the ICC rankings for ODI batsmen.
+                <br><br> ☛ Test batsman, making him the only Indian cricketer to hold the number one spot in all three formats of the game.  
+                <br><br> ☛ He has received many accolades for his performances in cricket. He won the ICC ODI Player of the Year award four times in 2012, 2017, 2018, and 2023. 
+                <br><br> ☛ He also won the Sir Garfield Sobers Trophy, given to the ICC Cricketer of the Year, on two occasions, in 2017 and 2018 respectively. 
+                <br><br> ☛ In 2018,this  magazine included him on its list of the  Kohli has been deemed one of the most commercially viable athletes, with estimated earnings of ₹634 crore (US$79 million) in the year 2022
+                <br><br> ☛ In 2020, the International Cricket Council named him the male cricketer of the decade.
+                <br><br> ☛ In place of an injured MS Dhoni, Virat was selected the stand-in ODI captain when India visited the West Indies. Earlier that year, he had also been named captain of his IPL team, the Royal Challengers Bangalore.  
+                <br><br> ☛ Kohli was honoured with the Arjuna Award in 2013, the Padma Shri under the sports category in 2017 and India's highest sporting honour, the Khel Ratna award, in 2018.
+                <br><br> ☛ He is the first player to score 20,000 runs in a decade.He holds the record as the highest run-scorer in T20I and IPL, ranks third in ODI.           
+              <br><br>   
+            </p>    
+        </div>  
+        <br>  
+    </main>     
+</body>  
+</html>  
