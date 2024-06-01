@@ -1,0 +1,14 @@
+question = "What is the color of the sky?"
+options = ["Red", "Blue", "Green"]
+answer = 1  
+def ask_question(question, options):
+  print(question)
+  for i, option in enumerate(options):
+    print(f"{i+1}. {option}")
+  user_input = int(input("Enter your answer (number): "))
+  return user_input == answer
+if __name__ == "__main__":
+  if ask_question(question, options):
+    print("Correct!")
+  else:
+    print("Incorrect. The answer is", options[answer])
