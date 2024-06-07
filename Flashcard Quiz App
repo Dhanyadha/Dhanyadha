@@ -1,0 +1,73 @@
+import random
+class Flashcard:
+    def __init__(self, question, answer):
+        self.question = question
+        self.answer = answer
+
+class FlashcardApp:
+    def __init__(self):
+        self.flashcards = []
+        self.score = 0
+        self.total_questions = 0
+
+    def add_flashcard(self, question, answer):
+        new_card = Flashcard(question, answer)
+        self.flashcards.append(new_card)
+
+    def take_quiz(self):
+        random.shuffle(self.flashcards)  # Shuffle cards for random testing
+        self.score = 0
+        self.total_questions = len(self.flashcards)
+
+        for card in self.flashcards:
+            user_answer = input(f"Question: {card.question}\nYour answer: ")
+            if user_answer.lower() == card.answer.lower():
+                print("Correct!")
+                self.score += 1
+            else:
+                print(f"Incorrect. The answer is: {card.answer}")
+
+        print(f"\nQuiz Results: You scored {self.score} out of {self.total_questions}.")
+
+    def display_stats(self):
+        if not self.flashcards:
+            print("No flashcards added yet.")
+            return
+
+        average_score = self.score / self.total_questions if self.total_questions else 0
+        print(f"Total Flashcards: {len(self.flashcards)}")
+        print(f"Average Score: {average_score:.2f}")  # Format average score with 2 decimal places
+
+# Create an instance of the FlashcardApp
+app = FlashcardApp()
+
+while True:
+    print("\nFlashcard Quiz App")
+    print("1. Add Flashcard")
+    print("2. Take Quiz")
+    print("3. Display Stats")
+    print("4. Exit")
+
+    choice = input("Enter your choice (1-4): ")
+
+    if choice == '1':
+        question = input("Enter question: ")
+        answer = input("Enter answer: ")
+        app.add_flashcard(question, answer)
+        print("Flashcard added successfully!")
+
+    elif choice == '2':
+        if not app.flashcards:
+            print("No flashcards added yet. Please add some first.")
+        else:
+            app.take_quiz()
+
+    elif choice == '3':
+        app.display_stats()
+
+    elif choice == '4':
+        print("Exiting Flashcard Quiz App...")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
