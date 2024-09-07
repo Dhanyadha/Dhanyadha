@@ -1,0 +1,87 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+// Class to represent a student
+class Student {
+    String studentID;
+    String name;
+    boolean isPresent;
+
+    public Student(String studentID, String name) {
+        this.studentID = studentID;
+        this.name = name;
+        this.isPresent = false; // By default, the student is marked absent
+    }
+
+    public void markAttendance() {
+        this.isPresent = true;
+    }
+
+    @Override
+    public String toString() {
+        String attendanceStatus = isPresent ? "Present" : "Absent";
+        return "Student ID: " + studentID + ", Name: " + name + ", Attendance: " + attendanceStatus;
+    }
+}
+
+// Class to handle the attendance system
+class AttendanceSystem {
+    HashMap<String, Student> students = new HashMap<>();
+
+    // Register a new student
+    public void registerStudent(String studentID, String name) {
+        if (!students.containsKey(studentID)) {
+            students.put(studentID, new Student(studentID, name));
+            System.out.println("Student " + name + " has been registered with ID " + studentID);
+        } else {
+            System.out.println("Student with ID " + studentID + " is already registered.");
+        }
+    }
+
+    // Mark attendance for a student
+    public void markAttendance(String studentID) {
+        Student student = students.get(studentID);
+
+        if (student == null) {
+            System.out.println("Student not found.");
+        } else {
+            student.markAttendance();
+            System.out.println("Attendance marked for " + student.name);
+        }
+    }
+
+    // Display attendance for all students
+    public void displayAttendance() {
+        System.out.println("\nAttendance Records:");
+        for (Student student : students.values()) {
+            System.out.println(student);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        AttendanceSystem attendanceSystem = new AttendanceSystem();
+
+        // Register Students
+        attendanceSystem.registerStudent("S101", "Alice");
+        attendanceSystem.registerStudent("S102", "Bob");
+        attendanceSystem.registerStudent("S103", "Charlie");
+
+        // Mark Attendance
+        System.out.println("\nMark attendance for students:");
+        System.out.print("Enter Student ID to mark attendance: ");
+        String studentID = scanner.nextLine();
+        attendanceSystem.markAttendance(studentID);
+
+        // Marking attendance for another student
+        System.out.print("Enter another Student ID to mark attendance: ");
+        studentID = scanner.nextLine();
+        attendanceSystem.markAttendance(studentID);
+
+        // Display Attendance Records
+        attendanceSystem.displayAttendance();
+    }
+}
