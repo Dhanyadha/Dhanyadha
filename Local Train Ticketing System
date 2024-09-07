@@ -1,0 +1,127 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Class to represent a train ticket
+class Ticket {
+public:
+    string ticketID;
+    string passengerName;
+    string source;
+    string destination;
+    double price;
+
+    Ticket(string id, string name, string src, string dest, double p) {
+        ticketID = id;
+        passengerName = name;
+        source = src;
+        destination = dest;
+        price = p;
+    }
+
+    // Function to display ticket details
+    void displayTicket() {
+        cout << "Ticket ID: " << ticketID << ", Passenger: " << passengerName
+             << ", Source: " << source << ", Destination: " << destination
+             << ", Price: ₹" << price << endl;
+    }
+};
+
+// Class to manage the ticketing system
+class TicketingSystem {
+private:
+    vector<Ticket> tickets;
+
+public:
+    // Function to book a ticket
+    void bookTicket(string passengerName, string source, string destination, double price) {
+        string ticketID = "T" + to_string(tickets.size() + 1);
+        Ticket newTicket(ticketID, passengerName, source, destination, price);
+        tickets.push_back(newTicket);
+        cout << "Ticket booked successfully! Ticket ID: " << ticketID << endl;
+    }
+
+    // Function to view ticket details by ticket ID
+    void viewTicket(string ticketID) {
+        for (auto &ticket : tickets) {
+            if (ticket.ticketID == ticketID) {
+                cout << "Ticket Details: " << endl;
+                ticket.displayTicket();
+                return;
+            }
+        }
+        cout << "Ticket not found." << endl;
+    }
+
+    // Function to display all booked tickets
+    void displayAllTickets() {
+        if (tickets.empty()) {
+            cout << "No tickets booked." << endl;
+        } else {
+            cout << "\nAll Booked Tickets:" << endl;
+            for (auto &ticket : tickets) {
+                ticket.displayTicket();
+            }
+        }
+    }
+};
+
+// Main function to run the ticketing system
+int main() {
+    TicketingSystem system;
+    int choice;
+    string passengerName, source, destination, ticketID;
+    double price;
+
+    while (true) {
+        cout << "\nLocal Train Ticketing System\n";
+        cout << "1. Book Ticket\n";
+        cout << "2. View Ticket\n";
+        cout << "3. Display All Tickets\n";
+        cout << "4. Exit\n";
+        cout << "Choose an option: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                // Book a ticket
+                cin.ignore();
+                cout << "Enter passenger name: ";
+                getline(cin, passengerName);
+                cout << "Enter source station: ";
+                getline(cin, source);
+                cout << "Enter destination station: ";
+                getline(cin, destination);
+                cout << "Enter ticket price: ₹";
+                cin >> price;
+                system.bookTicket(passengerName, source, destination, price);
+                break;
+
+            case 2:
+                // View a ticket by ID
+                cin.ignore();
+                cout << "Enter Ticket ID to view: ";
+                getline(cin, ticketID);
+                system.viewTicket(ticketID);
+                break;
+
+            case 3:
+                // Display all tickets
+                system.displayAllTickets();
+                break;
+
+            case 4:
+                // Exit the system
+                cout << "Exiting..." << endl;
+                return 0;
+
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+                break;
+        }
+    }
+
+    return 0;
+}
