@@ -1,0 +1,49 @@
+class Bug:
+    def __init__(self, id, description, assigned_to, priority):
+        self.id = id
+        self.description = description
+        self.assigned_to = assigned_to
+        self.priority = priority
+        self.status = "Open"
+    
+    def update_status(self, status):
+        self.status = status
+
+
+class BugTracker:
+    def __init__(self):
+        self.bugs = []
+
+    def log_bug(self, description, assigned_to, priority):
+        bug_id = len(self.bugs) + 1
+        bug = Bug(bug_id, description, assigned_to, priority)
+        self.bugs.append(bug)
+        print(f"Bug {bug_id} logged and assigned to {assigned_to}.")
+    
+    def prioritize_and_test(self):
+        # Sort bugs by priority
+        self.bugs.sort(key=lambda x: x.priority)
+        print("Bugs prioritized for testing:")
+        for bug in self.bugs:
+            print(f"Bug ID: {bug.id}, Priority: {bug.priority}, Status: {bug.status}")
+    
+    def deploy_fixes(self):
+        print("Deploying fixes...")
+        for bug in self.bugs:
+            if bug.status == "Open":
+                bug.update_status("Fixed")
+                print(f"Bug {bug.id} has been fixed.")
+
+
+# Usage
+tracker = BugTracker()
+
+# Step 1: Log errors and assign them to teammates
+tracker.log_bug("Error in login page", "Alice", 1)
+tracker.log_bug("Database timeout issue", "Bob", 2)
+
+# Step 2: Prioritize and test
+tracker.prioritize_and_test()
+
+# Step 3: Deploy fixes
+tracker.deploy_fixes()
