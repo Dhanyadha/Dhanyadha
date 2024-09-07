@@ -1,0 +1,123 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+class Candidate {
+    String name;
+    int votes;
+
+    public Candidate(String name) {
+        this.name = name;
+        this.votes = 0;
+    }
+
+    public void addVote() {
+        votes++;
+    }
+
+    public int getVotes() {
+        return votes;
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate: " + name + ", Votes: " + votes;
+    }
+}
+
+class Voter {
+    String voterID;
+    boolean hasVoted;
+
+    public Voter(String voterID) {
+        this.voterID = voterID;
+        this.hasVoted = false;
+    }
+
+    public boolean vote() {
+        if (!hasVoted) {
+            hasVoted = true;
+            return true;
+        }
+        return false;
+    }
+}
+
+class ElectionSystem {
+    ArrayList<Candidate> candidates = new ArrayList<>();
+    HashMap<String, Voter> voters = new HashMap<>();
+
+    public void registerCandidate(String name) {
+        candidates.add(new Candidate(name));
+        System.out.println("Candidate " + name + " has been registered.");
+    }
+
+    public void registerVoter(String voterID) {
+        if (!voters.containsKey(voterID)) {
+            voters.put(voterID, new Voter(voterID));
+            System.out.println("Voter with ID " + voterID + " has been registered.");
+        } else {
+            System.out.println("Voter with ID " + voterID + " is already registered.");
+        }
+    }
+
+    public void vote(String voterID, String candidateName) {
+        Voter voter = voters.get(voterID);
+
+        if (voter == null) {
+            System.out.println("Voter not registered.");
+            return;
+        }
+
+        if (!voter.vote()) {
+            System.out.println("Voter has already voted.");
+            return;
+        }
+
+        for (Candidate candidate : candidates) {
+            if (candidate.name.equals(candidateName)) {
+                candidate.addVote();
+                System.out.println("Vote successfully cast for " + candidateName);
+                return;
+            }
+        }
+        System.out.println("Candidate not found.");
+    }
+
+    public void displayResults() {
+        System.out.println("\nElection Results:");
+        for (Candidate candidate : candidates) {
+            System.out.println(candidate);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ElectionSystem electionSystem = new ElectionSystem();
+
+        // Register Candidates
+        electionSystem.registerCandidate("Alice");
+        electionSystem.registerCandidate("Bob");
+
+        // Register Voters
+        electionSystem.registerVoter("Voter1");
+        electionSystem.registerVoter("Voter2");
+
+        // Voting process
+        System.out.println("Enter voter ID and candidate name to cast vote:");
+        System.out.print("Voter ID: ");
+        String voterID = scanner.nextLine();
+        System.out.print("Candidate Name: ");
+        String candidateName = scanner.nextLine();
+        electionSystem.vote(voterID, candidateName);
+
+        // Voting again to demonstrate preventing multiple votes
+        System.out.println("\nAttempting second vote for the same voter:");
+        electionSystem.vote(voterID, candidateName);
+
+        // Display Results
+        electionSystem.displayResults();
+    }
+}
