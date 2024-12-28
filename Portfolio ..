@@ -1,0 +1,101 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>PageTitle</title>
+</head>
+<body>
+<h1 style="color: black">PERSONAL BLOG</h1>
+<img src="C:\Users\Kumar\Downloads\dhanyadha pic.jpeg"
+width="200" height="200">
+<p>Name:CH.Dhanyadha</p>
+<p>Study:B.Tech CSE </p>
+<p>style="color: black">College: GITAM UNIVERSITY</p>
+<p> Instagram ID:</p>
+<a href="Instagram
+id">https://www.instagram.com/invites/contact/?i=mt6orbepul9g&ut
+m_content=pjg9pl9
+<br></br>
+<a
+href="https://www.instagram.com/invites/contact/?i=mt6orbepul9g&u
+tm_content=pjg9pl9"> <img
+src="C:\Users\Kumar\Downloads\Instagram.jpeg" width=100/></a>
+<p> Linked in ID:</p>
+<a href="Linked IN id">https://www.linkedin.com/in/dhanyadhairinankur-ch-2a0a37289
+<br></br>
+<a href="https://www.linkedin.com/in/dhanyadha-irinankur-ch2a0a37289"> <img src="C:\Users\Kumar\Downloads\linkedin.png"
+width=100/></a>
+<p><b>Phone Number : </b> 9381391884 <p>
+<p><b>Gender : </b> female <p>
+<p><b>Strengths: </b> learning new things and do hardworking untill i
+get it </p>
+<p><b>Weakness: </b> without listening to others and take wrong
+decisions </p>
+<p><b>Eductional qulification:<p></b>
+<table border="1"> <body style="background-color:pink;">
+ <tr>
+ <th>year</th>
+ <th>level of education</th>
+ <th>school/collage</th>
+ <th>marks</th>
+ </tr>
+ <tr>
+ <td>2018-2019</td>
+ <td>10th class</td>
+ <td>school</td>
+ <td>75%</td>
+ </tr>
+ <tr>
+ <td>2019-2021</td>
+ <td>intermediate</td>
+ <td>collage</td>
+ <td>79%</td>
+ </tr>
+<tr>
+ <td>2021-2025</td>
+ <td>btech</td>
+ <td>collage</td>
+ <td>7.2</td>
+ </tr>
+</table>
+<h2> Registration form </h2>
+ <form>
+ <fieldset>
+ <legend>User personal information</legend>
+ <label>Enter your full name</label><br>
+ <input type="text" name="name"><br>
+ <label>Enter your email</label><br>
+ <input type="email" name="email"><br>
+ <label>Enter your password</label><br>
+ <input type="password" name="pass"><br>
+ <label>confirm your password</label><br>
+ <input type="password" name="pass"><br>
+ <label>date of birth</label><br>
+ <input type="password" name="pass"><br>
+ <br><label>Enter your gender</label><br>
+ <input type="radio" id="gender" name="gender"
+value="male"/>Male <br>
+ <input type="radio" id="gender" name="gender"
+value="female"/>Female <br/>
+ <input type="radio" id="gender" name="gender"
+value="others"/>others <br/>
+ <br>Enter your Address:<br>
+ <textarea></textarea><br>
+ <input type="submit" value="sign-up">
+ <input type="submit" value="reset">
+ </fieldset>
+</form>
+<br></br>
+<h1 style="color: blue"> VIDEO </h1>
+<video width="500px" controls>
+<source src= "C:\Users\Kumar\Downloads\Ed Sheeran - Perfect
+(Official Music Video).mp4">
+</video>
+<br></br>
+<h1 style="color: blue"> AUDIO </h1>
+<audio controls>
+ <source src="C:\Users\Kumar\Downloads\Ed Sheeran Perfect
+(Pagalworld123.com).mp3"
+</audio>
+<br></br>
+</body>
+</html>
